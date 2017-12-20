@@ -62,12 +62,13 @@ public class Main extends Application {
 
 	public void initRootLayout() {
         try {
-            // fxml 파일에서 상위 레이아웃을 가져온다.
+
+        	// get upper layer layout from the fxml file.
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/MainBorderPane.fxml"));
             rootLayout = (BorderPane) loader.load();
-            // 상위 레이아웃을 포함하는 scene을 보여준다.
+            // Show the scene include upper layer 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -79,12 +80,12 @@ public class Main extends Application {
 
 	public void showPersonOverview() {
         try {
-            // 연락처 요약을 가져온다.
+        	// Get Person information digest from fxml file
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/MainView.fxml"));
             AnchorPane MainView = (AnchorPane) loader.load();
 
-            // 연락처 요약을 상위 레이아웃 가운데로 설정한다.
+            // Setting digest to upper layer's center.
             rootLayout.setCenter(MainView);
 
             MainViewController controller = loader.getController();
@@ -98,7 +99,7 @@ public class Main extends Application {
     }
 
 	/*
-	 * 파일을 추가하는 창입니다.
+	    show File upload view from GUI
 	 */
 	public int setFileUploadView(FileModel file){
 
@@ -129,6 +130,8 @@ public class Main extends Application {
 		}
 	}
 
+	
+	// Show file down load view from GUI
 	public int setFileDownloadView(FileModel file){
 
 		try{
@@ -159,7 +162,7 @@ public class Main extends Application {
 
 
 	/*
-	 * 파일을 추가하는 창입니다.
+	 *  show signup view from GUI
 	 */
 	public int setSignUpView(User user){
 
@@ -191,6 +194,7 @@ public class Main extends Application {
 
 	}
 
+	 // Show login view from GUI
 	public int setLoginView(User user){
 
 		try{
@@ -217,7 +221,9 @@ public class Main extends Application {
 			return 0;
 		}
 	}
-
+	
+	
+    //Show create grouping view from GUI
 	public int setCreateGroupView(User user){
 
 		try{
@@ -245,6 +251,8 @@ public class Main extends Application {
 		}
 	}
 
+	
+	// Show invite group view from GUI
 	public int setInviteGroupView(User user){
 
 		try{
@@ -272,6 +280,8 @@ public class Main extends Application {
 		}
 	}
 
+	
+	//Show Out of group view from GUI
 	public int setOutGroupView(User user){
 
 		try{
